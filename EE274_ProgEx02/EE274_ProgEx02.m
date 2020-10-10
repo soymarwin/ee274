@@ -321,9 +321,10 @@ y4_1_both_400 = [y4_1_400(:),y4_2_400(:)]; %combine two channels L=400
 
 %%
 % _OBSERVATION: Output signals after passing system 4 appear to be
-% downsampled however, the output signal with L=4 has a clearer audio than
-% those x1 with L=100 and L=50. Visually, input and output signals are hard
-% to differ due to small percentage of difference._
+% downsampled however, the output signal with L=400 has a clearer audio than
+% those x1 with L=100 and L=50. Visually, input and output signals differ
+% greatly with L=50 and L=100 to have a similar plot that are farther with
+% the output signal of L=400._
 
 % Input 2 to System 4
 y4_3_50 = dt_4(x2,50); % x2 L=50 system4
@@ -345,9 +346,10 @@ stem(1:length(y4_3_400),y4_3_400); title('L=400 output signal');
 
 %%
 % _OBSERVATION: Output signals after passing system 4 appear to be
-% downsampled however, the output signal with L=4 has a clearer audio than
-% those x1 with L=100 and L=50. Visually, input and output signals are hard
-% to differ due to small percentage of difference._
+% downsampled however, the output signal with L=400 has a clearer audio than
+% those x1 with L=100 and L=50. Visually, input and output signals differ
+% greatly with L=50 and L=400 to have a similar plot that are shorter than
+% the output signal of L=100._
 
 % Input 3 to System 4
 y4_4_50 = dt_4(x3,50); % x3 L=50 system4
@@ -369,9 +371,8 @@ stem(1:length(y4_4_400),y4_4_400); title('L=400 output signal');
 
 %%
 % _OBSERVATION: Output signals after passing system 4 appear to be
-% downsampled however, the output signal with L=4 has a clearer audio than
-% those x1 with L=100 and L=50. Visually, input and output signals are hard
-% to differ due to small percentage of difference._
+% downsampled. Each output signals being extended in term of time-domain
+% as the value of L increases._
 
 % Input 4 to System 3
 y4_5_50 = dt_4(x4,50); % x4 L=50 system4
@@ -392,10 +393,8 @@ stem(1:length(y4_5_400),y4_5_400); title('L=400 output signal');
 % soundsc(y4_5_400,fs_x4); %x4 output audio through system 4 L=400
 
 %%
-% _OBSERVATION: Output signals after passing system 4 appear to be
-% downsampled however, the output signal with L=4 has a clearer audio than
-% those x1 with L=100 and L=50. Visually, input and output signals are hard
-% to differ due to small percentage of difference._
+% _OBSERVATION: Output signal mirror the other half of the original signal
+% with each end begin and end on a ramp._
 
 % Input 5 to System 4
 y4_6 = dt_4(x5,100);
@@ -417,16 +416,16 @@ stem(1:length(y4_6_400),y4_6_400); title('L=400 output signal');
 % soundsc(y4_6_400,fs_x5); %x5 output audio through system 4 L=400
 
 %%
-% _OBSERVATION: Output signals after passing system 4 appear to be
-% downsampled however, the output signal with L=4 has a clearer audio than
-% those x1 with L=100 and L=50. Visually, input and output signals are hard
-% to differ due to small percentage of difference._
+% _OBSERVATION: Output signals appear to being shrank at 1x10^n
+% with L=50 in a gradual manner and L=100 and 400 on a fading manner._
 
 %%
 % _OVERALL, output signals after system 4 appeared to be downsampled and
-% %played in a lower tone as compared to the original. Among the three
-% %L-values, output signals that are generated with L=400 are more audible
-% %compared to the other signals generated from L=50 and L=100._
+% played on a lower tone as compared to the original. Among the three
+% L-values, output signals that are generated with L=400 are more audible
+% compared to the other signals generated from L=50 and L=100.
+% Furthermore, certain portion og the output siganls are being squeezed 
+% in a fading manner depending on the value of L._
 
 %% Is the system BIBO stable?
 %%
