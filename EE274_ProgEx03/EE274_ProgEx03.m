@@ -15,10 +15,16 @@
 %%
 % $X(z) = \sum_{n=-\infty}^{\infty} (\frac{4}{3})^{1-k} u(k)z^{k-1}$
 %%
-% $X(z) = \sum_{n=0}^{\infty} (\frac{4}{3}) \times (\frac{4}{3})^{-k} \times z^k \times z^{-1}$
+% $X(z) = \sum_{n=0}^{\infty} (\frac{4}{3}) \cdot (\frac{4}{3})^{-k} \cdot z^k \times z^{-1}$
 %%
-% $X(z) = (\frac{4}{3z}) \ \sum_{n=0}^{\infty} (\frac{3z}{4})^{k}$
+% $X(z) = (\frac{4z^{-1}}{3}) \ \sum_{n=0}^{\infty} (\frac{3z}{4})^{k}$
 %%
-% $X(z) = (\frac{4}{3z}) \times (\frac{1}{1 - \frac{3z}{4}}), \ 0 < \ \mid {z} \mid \ < \ \frac{4}{3}$
-
+% $X(z) = \{ ^{(\frac{4z^{-1}}{3}) \cdot (\frac{1}{1 - \frac{3z}{4}}), \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+%%
+% $or \ X(z) = \{ ^{\frac{4z^{-1}}{3 - \frac{9z}{4}}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+%%
+% $or \ X(z) = \{ ^{\frac{16z^{-1}}{12 - 9z}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+%%
+% $or \ X(z) = \{ ^{\frac{16}{12z - 9z^{2}}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
 %% $(b) \ \ x(n) = 2^{- \mid {n} \mid} + (\frac{1}{3})^{\mid {n} \mid}$
+ 
