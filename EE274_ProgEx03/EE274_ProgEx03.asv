@@ -19,12 +19,12 @@
 %%
 % $X(z) = (\frac{4z^{-1}}{3}) \ \sum_{n=0}^{\infty} (\frac{3z}{4})^{k}$
 %%
-% $X(z) = \{ ^{(\frac{4z^{-1}}{3}) \cdot (\frac{1}{1 - \frac{3z}{4}}), \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+% $X(z) = {(\frac{4z^{-1}}{3}) \cdot (\frac{1}{1 - \frac{3z}{4}}), \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 %%
-% $or \ X(z) = \{ ^{\frac{4z^{-1}}{3 - \frac{9z}{4}}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+% $or \ X(z) ={\frac{4z^{-1}}{3 - \frac{9z}{4}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 %%
-% $or \ X(z) = \{ ^{\frac{16z^{-1}}{12 - 9z}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+% $or \ X(z) ={\frac{16z^{-1}}{12 - 9z}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 %%
-% $or \ X(z) = \{ ^{\frac{16}{12z - 9^z}, \ \frac{4}{3} \ > \ \mid {z} \mid} _{diverges,\ else}$
+% $or \ X(z) = {\frac{16}{12z - 9z^{2}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}} _{diverges,\ else}$
 %% $(b) \ \ x(n) = 2^{- \mid {n} \mid} + (\frac{1}{3})^{\mid {n} \mid}$
  
