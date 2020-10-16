@@ -37,7 +37,7 @@ zplane(A1_a_b,A1_a_a);
 % *Verification of z-transform v. original sequence with first 8-coef.*
 [delta,n]= impseq(0,0,7);
 A_a_Xz=filter(A1_a_b,A1_a_a,delta) %A_a_Xz is z-transform sequence
-A_a_Xn=[(4/3).^n].*stepseq(1,0,7) %A_A_Xn is the original sequence
+A_a_Xn=[(4/3).^n].*stepseq(1,0,7) %A_a_Xn is the original sequence
 
 %%
 % *Therefore, based on coef values generated from X(z) and x(n),
@@ -57,7 +57,18 @@ A_a_Xn=[(4/3).^n].*stepseq(1,0,7) %A_A_Xn is the original sequence
 %%
 % $or X(z) = \frac{12-5z^{-1}}{6-5z^{-1}+z^{-2}},\ \frac{1}{3}\ < \ \mid z \mid \ < \ \frac{1}{2}$
 
-% z-plane for 1.(b)
+% 
+%%
+% *z-plane for 1.(b)*
 A1_b_a=[6 -5 1];
 A1_b_b=[12 -5 0];
 zplane(A1_b_b,A1_b_a);
+
+%%
+% *Verification of z-transform v. original sequence with first 8-coef.*
+[delta,n]= impseq(0,0,7);
+A_b_Xz=filter(A1_b_b,A1_b_a,delta) %A_b_Xz is z-transform sequence
+A_b_Xn=((2).^(-abs(n)))+((1/3).^(abs(n))) %A_b_Xn is the original sequence
+
+% *Therefore, based on coef values generated from X(z) and x(n),
+% the z-transform for sequence(b) is correct.*
