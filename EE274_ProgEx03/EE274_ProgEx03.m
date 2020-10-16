@@ -1,9 +1,11 @@
 %% Marwin B. Alejo   2020-20221   EE274_ProgEx03
-% Also accessible through <http://www.github.com/soymarwin/ee274/EE274_ProgEx03>
+% Also accessible through
+% <http://www.github.com/soymarwin/ee274/EE274_ProgEx03>.
 
 %% A. The Bilateral Z-Transform
 
 %% $(a) \ \ x(n) = (\frac{4}{3})^n u(1-n)$
+% *Manual Solution*
 %%
 % $x(n) = (\frac{4}{3})^n u(-n+1)$
 %%
@@ -25,14 +27,21 @@
 %%
 % $or \ X(z) ={\frac{-16z^{-2}}{9-12z^{-1}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 
-% z-plane for 1.(a)
+%%
+% *z-plane for 1.(a)*
 A1_a_a=[-9, 12, 0];
 A1_a_b=[0, 0, -16];
 zplane(A1_a_b,A1_a_a);
-% verification of ztransform fxn v. original sequence
+
+%%
+% *Verification of z-transform v. original sequence with first 8-coef.*
 [delta,n]= impseq(0,0,7);
 A_a_Xz=filter(A1_a_b,A1_a_a,delta) %A_a_Xz is z-transform sequence
 A_a_Xn=[(4/3).^n].*stepseq(1,0,7) %A_A_Xn is the original sequence
+
+%%
+% *Therefore, based on coef values generated from X(z) and x(n),
+% the z-transform for sequence(a) is correct.*
 
 %% $(b) \ \ x(n) = 2^{- \mid {n} \mid} + (\frac{1}{3})^{\mid {n} \mid}$
 %%
