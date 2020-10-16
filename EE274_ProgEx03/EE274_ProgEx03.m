@@ -70,5 +70,6 @@ zplane(A1_b_b,A1_b_a);
 A_b_Xz=filter(A1_b_b,A1_b_a,delta) %A_b_Xz is z-transform sequence
 A_b_Xn=((2).^(-abs(n)))+((1/3).^(abs(n))) %A_b_Xn is the original sequence
 
+%%
 % *Therefore, based on coef values generated from X(z) and x(n),
-% the z-transform for sequence(b) is correct.*
+% the z-transform for sequence(b) is correct.* 
