@@ -27,4 +27,13 @@
 %%
 % $or \ X(z) ={\frac{16}{12z - 9z^{2}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 %% $(b) \ \ x(n) = 2^{- \mid {n} \mid} + (\frac{1}{3})^{\mid {n} \mid}$
- 
+%%
+% $X(z) = \sum_{n=0}^{\infty} 2^{-n}z^{-n} + \sum_{n=0}^{\infty} (\frac{1}{3})^{n}z^{-n}$
+%%
+% $X(z) = \sum_{n=0}^{\infty} (\frac{z^{-1}}{2})^{n} + \sum_{n=0}^{\infty} (\frac{z^{-1}}{3})^{n}$
+%%
+% $X(z) = \frac{1}{1-\frac{z^{-1}}{2}}+\frac{1}{1-\frac{z^{-1}}{3}}$
+%%
+% $X(z) = \frac{2z}{2z-1}+\frac{3z}{3z-1}$
+%%
+% $X(z) = \frac{z(12z-5)}{(2z-1)(3z-1)},\ \frac{1}{3}\ < \ \mid z \mid \ < \ \frac{1}{2}$
