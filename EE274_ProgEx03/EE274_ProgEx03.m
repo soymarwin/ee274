@@ -21,12 +21,18 @@
 %%
 % $X(z) = {(\frac{4z^{-1}}{3}) \cdot (\frac{1}{1 - \frac{3}{4z^{-1}}}), \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 %%
-% $or \ X(z) ={\frac{16z^{-2}}{12z^{-1} - 9}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
+% $or \ X(z) ={\frac{16z^{-2}}{-9+12z^{-1}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
+%%
+% $or \ X(z) ={\frac{-16z^{-2}}{9-12z^{-1}}, \ 0 \ < \ \mid {z} \mid \ < \ \frac{4}{3}}$
 
 % z-plane for 1.(a)
-A1_a_a=[-9 12 0];
-A1_a_b=[0 0 16];
+A1_a_a=[-9, 12, 0];
+A1_a_b=[0, 0, -16];
 zplane(A1_a_b,A1_a_a);
+% verification of ztransform fxn v. original sequence
+[delta,n]= impseq(0,0,7);
+A_a_Xz=filter(A1_a_b,A1_a_a,delta) %A_a_Xz is z-transform sequence
+A_a_Xn=[(4/3).^n].*stepseq(1,0,7) %A_A_Xn is the original sequence
 
 %% $(b) \ \ x(n) = 2^{- \mid {n} \mid} + (\frac{1}{3})^{\mid {n} \mid}$
 %%
