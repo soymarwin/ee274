@@ -53,9 +53,9 @@ A_a_Xn=[(4/3).^n].*stepseq(1,0,7)
 %%
 % $X(z) = \frac{2}{2-z^{-1}}+\frac{3}{3-z^{-1}}$
 %%
-% $X(z) = \frac{12-5z^{-1}}{(2-z^{-1})(3-z^{-1})},\ \frac{1}{3}\ < \ \mid z \mid \ < \ \frac{1}{2}$
+% $X(z) = \frac{12-5z^{-1}}{(2-z^{-1})(3-z^{-1})},\ \mid z \mid \ > \ \frac{1}{3} \ \cap \ \mid z \mid \ > \ \frac{1}{2}$
 %%
-% $or X(z) = \frac{12-5z^{-1}}{6-5z^{-1}+z^{-2}},\ \frac{1}{3}\ < \ \mid z \mid \ < \ \frac{1}{2}$
+% $or X(z) = \frac{12-5z^{-1}}{6-5z^{-1}+z^{-2}},\ \mid z \mid \ > \ \frac{1}{3} \ \cap \ \mid z \mid \ > \ \frac{1}{2}$
 %%
 % *z-plane for 1.(b)*
 A1_b_a=[6 -5 1];
@@ -94,3 +94,22 @@ A3_Xn=(((1/3).^n).*(stepseq0(2,0,19))+(((0.9).^(n-3)).*(stepseq0(0,0,19))))
 %%
 % *Therefore, based on coef values generated from X(z) and x(n),
 % the z-transform for sequence in (A.3.) is correct.* 
+
+%% B.4. $X(z)={\frac{1-z^{-1}-4z^{-2}+4z^{-3}}{1-\frac{11}{4}z^{-1}+\frac{13}{8}z^{-2}-\frac{1}{4}z^{-3}}}$
+B4_b=[1, -1, -4, 4];
+B4_a=[1, (-11/4), (13/8), (-1/4)];
+[B4_R, B4_p, B4_C]=residuez(B4_b,B4_a);
+%%
+% $X(z)=\frac{0z}{z-2} - \frac{10z}{z-0.5} + \frac{27z}{z-0.25} - {16}$
+%%
+% $X(n)=u(-n)-(2^{-2n}(5 \times 2^{n+1}-27)(1-u(-n)))$
+%%
+% *Verification of z-transform v. ans sequence with first 8-coef.*
+%%
+% _Disclaimer: First element is a garbage value. Thus, array(2:9)_ 
+[delta,n]= impseq(0,0,8);
+B4_Xz=filter(B4_b,B4_a,delta); %B4_Xz is z-transform sequence
+%B4_Xn is inv. ztrans sequence
+B4_Xn=-heaviside(-n)-((2.^(-2*n)).*(5.*(2.^(n+1))-27).*(1-heaviside(-n)));
+B4_Xz(2:8)% First 8 coef of B4_Xz - Z-transf 
+B4_Xn(2:8)% First 8 coef of B4_Xn - Inv. Z-transf
